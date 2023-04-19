@@ -1,0 +1,9 @@
+<% if @recipes.any? %>
+  <ul class = "container">
+    <% @recipes.each do |recipe| %>
+      <%= render partial: "shared/recipe_card", locals: {recipe: recipe} %>
+    <% end %>
+  </ul>
+<% else %>
+  <h3 class = "container">You have no recipes yet. Create one!</h3>
+<% end %>
