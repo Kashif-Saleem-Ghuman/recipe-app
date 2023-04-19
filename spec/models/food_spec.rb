@@ -13,7 +13,7 @@ RSpec.describe Food, type: :model do
     end
 
     it 'Should have a price' do
-      expect(subject.price).to eq "3"
+      expect(subject.price).to eq '3'
     end
 
     it 'Should have a measurement_unit' do
