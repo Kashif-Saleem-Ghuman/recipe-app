@@ -26,7 +26,7 @@
       <ul class="navbar-nav ms-auto mb-2 mb-lg-0 custom">
          <% if @current_user %>
          <li class="nav-item">Welcome
-            <span class="navbar-brand fs-6"> <%= current_user.name %></span>
+            <span class="navbar-brand fs-6 text-info"> <%= current_user.name %></span>
          </li>
             <li class="nav-item navbar-brand fs-6">
              <%= button_to "logout", destroy_user_session_path , method: :delete, class: "btn btn-outline-secondary"  %>
