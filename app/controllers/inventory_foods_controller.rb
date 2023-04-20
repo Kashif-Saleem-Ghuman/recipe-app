@@ -30,6 +30,6 @@ class InventoryFoodsController < ApplicationController
   def destroy
     @inventory_food = InventoryFood.find(params[:id])
     @inventory_food.destroy
-    redirect_to inventory_inventory_foods_path()
+    redirect_to inventory_inventory_foods_path
   end
 end
