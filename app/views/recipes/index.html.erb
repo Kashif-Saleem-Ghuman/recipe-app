@@ -4,7 +4,7 @@
 
 <% if @recipes.any? %>
   <ul class = "container">
-    <% @recipes.each do |recipe| %>
+    <% @recipes.includes(:user).each do |recipe| %>
       <%= render partial: "shared/recipe_card", locals: {recipe: recipe} %>
     <% end %>
   </ul>
