@@ -1,6 +1,5 @@
 class InventoriesController < ApplicationController
   def index
-    @current_user = current_user
     @inventories = Inventory.all
   end
 
@@ -11,6 +10,7 @@ class InventoriesController < ApplicationController
   end
 
   def create
+
   end
 
   def destroy
