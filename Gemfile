@@ -28,10 +28,10 @@ gem 'stimulus-rails'
 gem 'jbuilder'
 
 gem 'bootstrap', '~> 5.2.0'
+gem 'cancancan'
 gem 'devise'
 gem 'letter_opener'
 gem 'rubocop', '>= 1.0', '< 2.0'
-gem 'cancancan'
 
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
