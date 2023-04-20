@@ -8,10 +8,12 @@
 
 <p> Description: <%= @recipe.description %> </p>
 
+<% if can? :manage, @recipe %>
 <% if @recipe.public %>
   <%= button_to "Make private", toggle_public_path(@recipe.id), method: :patch, class: "btn btn-success" %>
 <% else %>
   <%= button_to "Make public", toggle_public_path(@recipe.id), method: :patch, class: "btn btn-outline-danger" %> 
+<% end %>
 <% end %>
 
 <% if @recipe.user_id == current_user.id %>
