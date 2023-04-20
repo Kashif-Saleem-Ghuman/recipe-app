@@ -3,7 +3,6 @@ class Recipe < ApplicationRecord
   has_many :recipe_foods, dependent: :destroy
   has_many :foods, through: :recipe_foods
 
-
   validates :name, presence: true
 
   def total_price

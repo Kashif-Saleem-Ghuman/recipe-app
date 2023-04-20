@@ -6,11 +6,10 @@ class RecipeFoodsController < ApplicationController
     @ingredient = RecipeFood.new
   end
 
-
-  def create 
+  def create
     @recipe = Recipe.find(params[:recipe_id])
     @recipe_food = RecipeFood.new(recipe_food_params.merge(recipe_id: @recipe.id))
-  
+
     if @recipe_food.save
       redirect_to recipe_path(@recipe.id)
     else
@@ -18,12 +17,12 @@ class RecipeFoodsController < ApplicationController
     end
   end
 
-  def destroy 
+  def destroy
     @recipe_food = RecipeFood.find(params[:id])
     if @recipe_food.destroy
-      flash[:notice] = "Ingredient deleted"
+      flash[:notice] = 'Ingredient deleted'
     else
-      flash[:alert] = "Ingredient not deleted"
+      flash[:alert] = 'Ingredient not deleted'
     end
     redirect_to recipe_path(params[:recipe_id])
   end
@@ -33,5 +32,4 @@ class RecipeFoodsController < ApplicationController
   def recipe_food_params
     params.require(:recipe_food).permit(:food_id, :quantity)
   end
-
 end
