@@ -14,11 +14,16 @@
     <tbody>
       <% @inventories.each do | inventory | %>
        <tr>
-        <th scope="row"> <%= inventory.id %></th>
+        <th scope="row"><%= inventory.id %></th>
         <td><%= inventory.name %></td>
         <td><%= inventory.description %></td>
         <td>
-          <%= button_to "Delete", "inventories/#{inventory.id}" , method: :delete, class: "btn border-danger text-danger" %>
+          <div class="d-flex justify-content-between">
+          <button type="button" class= "btn border-warning bg-warning">
+            <a class="text-light text-decoration-none" href="/inventories/<%= inventory.id %>">Description</a>  
+          </button>
+          <%= button_to "Delete", "inventories/#{inventory.id}" , method: :delete, class: "btn border-danger text-light bg-danger" %>
+          </div>
         </td>
        </tr>
       <% end %>
