@@ -1,0 +1,30 @@
+
+<button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+    Add Food
+</button>
+
+
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+    <%= form_with url: inventory_inventory_foods_path(params[:inventory_id]),  local: true do |form| %>
+      <%= form.hidden_field :inventory_id, value: params[:id] %>
+      <div class="modal-header w-100">
+      <h5 class="modal-title" id="staticBackdropLabel">Please choose your food</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body d-flex align-items-center justify-content-around">
+      <h5 class="modal-title" id="staticBackdropLabel"><%= form.select :food, @food_list.collect {|u| [ u.name, u.id ] }%></h5>
+      <div>  
+        <%= form.label :quantity %>
+        <%= form.number_field :quantity, placeholder: '0.00' %>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <%= form.submit "Add", class: 'btn btn btn-primary' %>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>

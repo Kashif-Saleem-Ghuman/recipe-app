@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
+ 
   devise_for :users
+  resources :inventories, only: [:index, :show, :new, :create, :destroy] do
+    resources :inventory_foods
+  end 
   resources :foods, only: [:index, :new, :create, :destroy]
   resources :recipes, only: [:index, :show, :destroy, :new, :create] do
      resources :recipe_foods, only: [:new, :create, :destroy]
