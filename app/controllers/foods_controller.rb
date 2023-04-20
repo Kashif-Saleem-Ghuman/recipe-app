@@ -22,6 +22,8 @@ class FoodsController < ApplicationController
 
   def destroy
     @food = Food.find(params[:id])
+    RecipeFood.where(food_id: @food.id).destroy_all
+    InventoryFood.where(food_id: @food.id).destroy_all
     @food.destroy
     redirect_to foods_path
   end
