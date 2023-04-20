@@ -1,2 +1,18 @@
-<h1>Inventories#new</h1>
-<p>Find me in app/views/inventories/new.html.erb</p>
+<h2>Add a new Inventory</h2>
+
+<%= form_with model: @Inventory, url: inventories_path do |f| %>
+
+    <div class="field">
+    <%= f.label :name, class:"mt-2" %><br />
+    <%= f.text_field :name, autofocus: true, class: "form-control", placeholder: "Inventory Name" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :description , class:"mt-2" %>
+    <%= f.text_field :description, autocomplete: "description" , class: "form-control", placeholder: "Description" %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Add Inventory", class: "mt-4 btn btn-success" %>
+  </div>
+<% end %>
