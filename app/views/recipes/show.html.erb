@@ -37,7 +37,7 @@
       </tr>
     </thead>
     <tbody>
-      <% @ingredients.each do | ingredient | %>
+      <% @ingredients.includes(:food).each do | ingredient | %>
        <tr>
         <th scope="row"> <%= ingredient.food.name %> </th>
         <td><%= ingredient.quantity %> <%= ingredient.food.measurement_unit %></td>
