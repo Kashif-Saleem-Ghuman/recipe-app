@@ -6,7 +6,6 @@ class InventoriesController < ApplicationController
   def new
     @current_user = current_user
     @inventories = Inventory.new
-
   end
 
   def show
