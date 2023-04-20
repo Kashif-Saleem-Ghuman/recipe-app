@@ -41,7 +41,7 @@
        <tr>
         <th scope="row"> <%= ingredient.food.name %> </th>
         <td><%= ingredient.quantity %> <%= ingredient.food.measurement_unit %></td>
-        <td> <%= ingredient.food.price * ingredient.quantity %></td>
+        <td> <%= ingredient.food.price.to_i * ingredient.quantity.to_i %></td>
         <td>
           <%= button_to "Delete", recipe_recipe_food_path(@recipe.id, ingredient.id) , method: :delete, class: "btn border-danger text-danger" %>
         </td>
