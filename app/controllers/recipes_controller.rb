@@ -30,7 +30,7 @@ class RecipesController < ApplicationController
 
   def public_recipes
     @current_user = current_user
-    @recipes = Recipe.where(public: true)
+    @recipes = Recipe.where(public: true).order(created_at: :desc)
   end
 
   def destroy
