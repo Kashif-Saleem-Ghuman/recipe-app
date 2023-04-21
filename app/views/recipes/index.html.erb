@@ -1,0 +1,15 @@
+<div class="container">
+  <div class = "d-flex justify-content-end">
+    <%= link_to "New recipe", "recipes/new", class: "btn btn-success" %> 
+  </div>
+</div>
+
+<% if @recipes.any? %>
+  <ul class = "container">
+    <% @recipes.includes(:user).each do |recipe| %>
+      <%= render partial: "shared/recipe_card", locals: {recipe: recipe} %>
+    <% end %>
+  </ul>
+<% else %>
+  <h3 class = "container">You have no recipes yet. Create one!</h3>
+<% end %>
