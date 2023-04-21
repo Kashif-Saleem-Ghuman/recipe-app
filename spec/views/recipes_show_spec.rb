@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe 'Recipe show', type: :feature do
-
   before :each do
     # create a user
     user = User.create(email: 'alice@gmail.com', password: '123456', confirmed_at: Time.now)
