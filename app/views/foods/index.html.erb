@@ -12,7 +12,7 @@
       </tr>
     </thead>
     <tbody>
-      <% @foods.each do | food | %>
+      <% @foods.includes(:user).each do | food | %>
        <tr>
         <th scope="row"> <%= food.name %></th>
         <td><%= food.measurement_unit %></td>
