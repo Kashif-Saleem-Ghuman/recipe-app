@@ -1,0 +1,37 @@
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+    Generate Shopping List
+</button>
+<% if @inventories.any? %>
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+    <%= form_with url: generate_shopping_list_path(@recipe.id),  local: true do |form| %>
+      <%= form.hidden_field :recipe_id, value: @recipe.id %>
+      <div class="modal-header w-100">
+      <h5 class="modal-title" id="staticBackdropLabel">Please choose your inventory</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body d-flex align-items-center justify-content-around">
+      <h5 class="modal-title" id="staticBackdropLabel"><%= form.select :inventory, @inventories.collect {|u| [ u.name, u.id ] }%></h5>
+      <div class="modal-footer">
+        <%= form.submit "Generate", class: 'btn btn btn-primary' %>
+      </div>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+<% else %>
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+    <div class="d-flex flex-column p-2">
+      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      <p class="fs-4">No inventories to show</p>
+      <br>
+      <%= link_to "Create inventory", inventories_path , class: "btn btn-primary"%>
+    </div>
+    </div>
+  </div>
+</div>
+<% end %>
