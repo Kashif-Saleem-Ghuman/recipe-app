@@ -143,6 +143,11 @@ rspec spec/views
 - GitHub: [Kashif](https://github.com/Kashif-Saleem-Ghuman)
 - Twitter: [Kashif](https://twitter.com/Kashif14Saleem)
 - LinkedIn: [Kashif](https://www.linkedin.com/in/kashifsaleemghuman/)
+
+👤 **Wahaj Ali**
+
+- GitHub: [@Wahaj-Ali](https://github.com/Wahaj-Ali)
+- LinkedIn: [@wahaj-ali96](https://www.linkedin.com/in/wahaj-ali96/)
   
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
