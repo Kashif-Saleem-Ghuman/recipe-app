@@ -26,7 +26,7 @@
 
 # 📖 [Recipe App] <a name="about-project"></a>
 
-**TThe Recipe app provides a comprehensive solution for managing recipes, ingredients, and inventory. You can save ingredients and track what you have on hand, create recipes, and generate a shopping list based on what you need for a recipe. Additionally, the app allows you to make your recipes public, facilitating easy sharing with others who may find them useful in their own cooking endeavors.**
+**The Recipe app provides a comprehensive solution for managing recipes, ingredients, and inventory. You can save ingredients and track what you have on hand, create recipes, and generate a shopping list based on what you need for a recipe. Additionally, the app allows you to make your recipes public, facilitating easy sharing with others who may find them useful in their own cooking endeavors.**
   <ul>
     <li>View Recipes for the logged in user </li>
     <li>logged in user can delete their recipes</li>
